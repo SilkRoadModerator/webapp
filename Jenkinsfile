@@ -28,6 +28,7 @@ pipeline {
 			  sh 'wget "https://raw.githubusercontent.com/SilkRoadModerator/webapp/main/OWASP_Dependency_Check.sh" '
 			  sh 'chmod -x OWASP_Dependency_Check.sh'
 			  sh 'bash OWASP_Dependency_Check.sh'
+			  sh 'cat /home/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
 		  }
 	  }
     
