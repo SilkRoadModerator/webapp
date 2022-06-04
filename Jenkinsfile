@@ -16,7 +16,7 @@ pipeline {
 	  stage ('Check Git Secrets') {
 	  steps {
 		  sh 'rm trufflehog || true'
-		  sh 'docker run docker.io/dxa4481/trufflehog –-json https://github.com/SilkRoadModerator/webapp.git > trufflehog.txt'
+		  sh 'docker run docker.io/dxa4481/trufflehog –-json git_url https://github.com/SilkRoadModerator/webapp.git > trufflehog'
 		  sh 'cat trufflehog'
 	  }
   }
