@@ -22,8 +22,10 @@ pipeline {
       }
   
     stage('Deploy to Tomcat'){
+	    steps {
 	  sh 'scp target/*.war /home/jenkins/prod/apache-tomcat-8.5.79/webapps/webapp.war'
 	  }
+    }
     
    }
 }
