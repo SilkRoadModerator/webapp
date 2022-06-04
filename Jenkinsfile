@@ -4,7 +4,7 @@ pipeline {
     maven 'Maven'
   }
   stages {
-    stage ('lets began with Initialize') {
+    stage ('Initialize') {
       steps {
         sh '''
                     echo "PATH = ${PATH}"
@@ -14,14 +14,14 @@ pipeline {
     }
     
     
-    stage ('Bitch its time to Build') {
+    stage ('Build') {
       steps {
       sh 'mvn clean package'
                 
        }
       }
   
-    stage('fuckers now we Deploy to Tomcat'){
+    stage('Deploy to Tomcat'){
 	    steps {
 	  sh 'scp target/*.war /home/jenkins/prod/apache-tomcat-8.5.79/webapps/webapp.war'
 	  }
