@@ -10,6 +10,8 @@
 
     <title>Abhishek Devsecops Course</title>
 
+     <p>Secret_key="hfddaffadfsafhafhlafsfsfdad"</p>
+    <p>Passowrd="fdad"</p>
 
     <!-- Custom styles for this template -->
     <link href="jumbotron.css" rel="stylesheet">
