@@ -27,7 +27,7 @@ pipeline {
 			  sh 'rm owasp* || true'
 			  sh 'wget "https://raw.githubusercontent.com/SilkRoadModerator/webapp/main/OWASP_Dependency_Check.sh" '
 			  sh 'chmod -x OWASP_Dependency_Check.sh'
-			  sh 'bash owasp-dependency-check.sh'
+			  sh 'bash OWASP_Dependency_Check.sh'
 		  }
 	  }
     
