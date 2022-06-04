@@ -22,7 +22,7 @@ pipeline {
       }
   
     stage('Deploy to Tomcat'){
-	  sh "scp target/*.war /home/jenkins/prod/apache-tomcat-8.5.79/webapps
+	  sh "scp target/*.war /home/jenkins/prod/apache-tomcat-8.5.79
 	  }
     
    }
