@@ -17,10 +17,13 @@ pipeline {
     stage ('Build') {
       steps {
       sh 'mvn clean package'
-        
-        
+                
        }
       }
   
+    stage('Deploy to Tomcat'){
+	  sh "scp target/*.war /home/jenkins/prod/apache-tomcat-8.5.79/webapps/
+	  }
+    
    }
 }
