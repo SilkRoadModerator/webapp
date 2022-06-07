@@ -13,7 +13,14 @@ pipeline {
       }
     }
     
-	 
+	 stage ('Check Git Secrets') {
+	  steps {
+		  sh 'rm trufflehog || true'
+		  sh 'docker run docker.io/dxa4481/trufflehog https://github.com/SilkRoadModerator/webapp.git > trufflehog'
+		  sh 'cat trufflehog'
+	  }
+  } 
+	  
 	stage ('Build') {
       		steps {
       	     sh 'mvn clean package'
