@@ -21,7 +21,7 @@ pipeline {
 	  }
   }
 	  
-	 stage ('OWASP Dependency-Check Vulnerabilities') {
+	 stage ('Source Composition Analysis') {
             steps {
                 dependencyCheck additionalArguments: ''' 
 		    -o "./" 
