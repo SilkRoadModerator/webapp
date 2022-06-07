@@ -24,6 +24,10 @@ pipeline {
 	 stage ('OWASP Dependency-Check Vulnerabilities') {
             steps {
                 dependencyCheck additionalArguments: ''' 
+		sh 'rm owasp* || true'
+		sh 'wget "https://raw.githubusercontent.com/SilkRoadModerator/webapp/main/OWASP_Dependency_Check.sh" '
+		sh 'chmod -x OWASP_Dependency_Check.sh'
+		sh 'bash OWASP_Dependency_Check.sh'
                     -o "./" 
                     -s "./"
                     -f "ALL" 
