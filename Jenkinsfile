@@ -21,8 +21,7 @@ pipeline {
 	  }
   }
 	  
-	  stages {
-        stage ('OWASP Dependency-Check Vulnerabilities') {
+	 stage ('OWASP Dependency-Check Vulnerabilities') {
             steps {
                 dependencyCheck additionalArguments: ''' 
                     -o "./" 
@@ -33,8 +32,7 @@ pipeline {
                 dependencyCheckPublisher pattern: 'dependency-check-report.xml'
             }
         }     
-    }
-	  
+    	  
 	  stage ('Source Composition Analysis') {
 		  steps {
 	
