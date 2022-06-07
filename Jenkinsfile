@@ -24,11 +24,7 @@ pipeline {
 	 stage ('OWASP Dependency-Check Vulnerabilities') {
             steps {
                 dependencyCheck additionalArguments: ''' 
-		sh 'rm owasp* || true'
-		sh 'wget "https://raw.githubusercontent.com/SilkRoadModerator/webapp/main/OWASP_Dependency_Check.sh" '
-		sh 'chmod -x OWASP_Dependency_Check.sh'
-		sh 'bash OWASP_Dependency_Check.sh'
-                    -o "./" 
+		    -o "./" 
                     -s "./"
                     -f "ALL" 
                     --prettyPrint''', odcInstallation: 'OWASP-DC'
@@ -37,20 +33,9 @@ pipeline {
             }
         }     
     	  
-	  stage ('Source Composition Analysis') {
-		  steps {
-	
-			  sh 'rm owasp* || true'
-			  sh 'wget "https://raw.githubusercontent.com/SilkRoadModerator/webapp/main/OWASP_Dependency_Check.sh" '
-			  sh 'chmod -x OWASP_Dependency_Check.sh'
-			  sh 'bash OWASP_Dependency_Check.sh'
-			  sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
-		  }
-	  }
-    
-    stage ('Build') {
-      steps {
-      sh 'mvn clean package'
+	stage ('Build') {
+      		steps {
+      	     sh 'mvn clean package'
                 
        }
       }
